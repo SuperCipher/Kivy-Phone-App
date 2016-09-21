@@ -1,0 +1,68 @@
+#:kivy 1.2.0
+
+<NumButton@Button>:
+	the_root: self.parent.my_root
+	on_press: self.the_root._execute(self.text)
+	background_color: [1, 1, 1, 1]
+	color: [1, 1, 1, 1]
+	font_size: self.width/8
+
+<NumButtonOp@NumButton>:
+	background_color: [0.6, 0.6, 0.6, 1]
+	color: [0.2, 0.8, 1, 1]
+
+<NumButtonSpecial@NumButton>:
+	background_color: [0.3, 0.6, 0.6, 1]
+	color: [0, 1, 1, 1]
+
+<Phone>:
+	ti: myti
+	BoxLayout:
+		size: root.width, root.height
+		orientation: "vertical"
+		spacing: 10
+		padding: [5, 5, 5, 5]
+		TextInput:
+			size_hint: 1, 2
+			id: myti
+			text: ""
+			readonly: True
+			font_size: 100
+			background_color: [1, 1, 1, 1]
+			foreground_color: [0, 0, 0, 1]
+		GridLayout:
+			cols: 3
+			rows: 5
+			spacing: [8, 8]
+			my_root: root
+
+			NumButton:
+				text: "1"
+			NumButton:
+				text: "2"
+			NumButton:
+				text: "3"
+			NumButton:
+				text: "4"
+			NumButton:
+				text: "5"
+			NumButton:
+				text: "6"
+			NumButton:
+				text: "7"
+			NumButton:
+				text: "8"
+			NumButton:
+				text: "9"
+			NumButtonOp:
+				text: "#"
+			NumButton:
+				text: "0"
+			NumButtonOp:
+				text: "*"
+			NumButtonOp:
+				text: "CALL"
+            NumButtonOp:
+				text: "Delete"
+			NumButtonOp:
+				text: "Contact"
